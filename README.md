@@ -27,3 +27,12 @@ Warning: Each child in an array or iterator should have a unique "key" prop. Che
 在浏览器中打开后，没有警告，页面可以正常工作。
 
 但是，这个key在传递数据的时候根本就没有用，设置了不是很多余吗？
+有位网友在http://pandakeeper.net:8000/?p=254 中是这么说的：
+
+react的key关乎到react的dom-diff算法 react中对于dom的操作是根据生成的data-reactid进行绑定的，添加key可以保证dom结构的完整性，而不会根据react自己对dom标记的key进行重新分配 react每次决定重新渲染的时候，几乎完全是根据data-reactid来决定的，最重要的是这个机制
+
+不过我还不是不明白：这个key在页面渲染的时候react组件用到了，但我们这些开发者根本就没有用，那为什么还要我们去设置呢，直接用默认的不就行了？
+
+有答案的时候我会更新的，敬请期待。。。。
+
+
