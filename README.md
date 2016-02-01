@@ -23,15 +23,6 @@ Warning: Each child in an array or iterator should have a unique "key" prop. Che
 由此，我们可以从表面上理解：在页面可以正常工作的前提下，这个key要么设置为会重复的关键参数，要么不设置。不设置，控制台会出警告，但不影响页面正常工作。完美的解决方法：就是消除警告，页面还可以正常工作。
 
 改写TodoList ，增加key，reactid从0开始递增，前缀：li_,由此产生不重复的key值。
- var TodoList = React.createClass({
-         render: function() {
-             var reactid = 0;
-             var createItem = function(itemText) {
-                 return <li key={'li_' + reactid++}>{itemText}</li>;
-             };
-             return <ul>{this.props.items.map(createItem)}</ul>;
-         }
-     });
 
 在浏览器中打开后，没有警告，页面可以正常工作。
 
